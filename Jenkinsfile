@@ -1,3 +1,4 @@
+#!groovy
 pipeline {
     agent {
         node {
@@ -23,6 +24,11 @@ pipeline {
                     }
                 }
              }
+        }
+    }
+    post {
+        always {
+            archive "Jenkinsfile"
         }
     }
 }
