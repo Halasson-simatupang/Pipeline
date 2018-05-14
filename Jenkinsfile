@@ -28,7 +28,7 @@ pipeline {
     }
     post {
         always {
-            archive "Jenkinsfile"
+            archiveArtifacts 'Jekinsfile'
         }
     }
 }
