@@ -5,10 +5,13 @@ pipeline {
             label 'PHP-CSF-STAGING'
         }
     }
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+    }
     stages { 
         stage('Example') {
             steps {
-                echo 'Hello World'
+                echo "Hello World ${params.PERSON}"
             }
         }
         stage('Paralel') {
